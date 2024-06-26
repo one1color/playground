@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963D91DF2C2C25D100299CFA /* Challenge_stack_foreach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D91DE2C2C25D100299CFA /* Challenge_stack_foreach.swift */; };
 		96B41DF02C2C0DC9003B67B5 /* my_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B41DEF2C2C0DC9003B67B5 /* my_SwiftUIApp.swift */; };
 		96B41DF22C2C0DC9003B67B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B41DF12C2C0DC9003B67B5 /* ContentView.swift */; };
 		96B41DF42C2C0DCA003B67B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B41DF32C2C0DCA003B67B5 /* Assets.xcassets */; };
@@ -15,10 +16,10 @@
 		96B41E012C2C1147003B67B5 /* Challenge 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B41E002C2C1147003B67B5 /* Challenge 2.swift */; };
 		96B41E032C2C1158003B67B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96B41E022C2C1158003B67B5 /* Assets.xcassets */; };
 		96B41E052C2C15A6003B67B5 /* Challenge_state_binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B41E042C2C15A6003B67B5 /* Challenge_state_binding.swift */; };
-		96B41E072C2C1B7F003B67B5 /* Challenge_Stacks_ForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B41E062C2C1B7F003B67B5 /* Challenge_Stacks_ForEach.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		963D91DE2C2C25D100299CFA /* Challenge_stack_foreach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_stack_foreach.swift; sourceTree = "<group>"; };
 		96B41DEC2C2C0DC9003B67B5 /* my SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96B41DEF2C2C0DC9003B67B5 /* my_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my_SwiftUIApp.swift; sourceTree = "<group>"; };
 		96B41DF12C2C0DC9003B67B5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		96B41E002C2C1147003B67B5 /* Challenge 2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Challenge 2.swift"; sourceTree = "<group>"; };
 		96B41E022C2C1158003B67B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../Desktop/video-suif-materials/04-challenge-views-modifiers/starter/Modifier Match Challenge/Assets.xcassets"; sourceTree = "<group>"; };
 		96B41E042C2C15A6003B67B5 /* Challenge_state_binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge_state_binding.swift; sourceTree = "<group>"; };
-		96B41E062C2C1B7F003B67B5 /* Challenge_Stacks_ForEach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Challenge_Stacks_ForEach.swift; path = "../../../../../Desktop/video-suif-materials/09-challenge-stacks-ForEach/starter/Weather Widget Challenge/Challenge_Stacks_ForEach.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				96B41E002C2C1147003B67B5 /* Challenge 2.swift */,
 				96B41DFE2C2C1141003B67B5 /* Challenge 1.swift */,
 				96B41E042C2C15A6003B67B5 /* Challenge_state_binding.swift */,
-				96B41E062C2C1B7F003B67B5 /* Challenge_Stacks_ForEach.swift */,
+				963D91DE2C2C25D100299CFA /* Challenge_stack_foreach.swift */,
 				96B41DF32C2C0DCA003B67B5 /* Assets.xcassets */,
 				96B41DF52C2C0DCA003B67B5 /* my_SwiftUI.entitlements */,
 				96B41DF62C2C0DCA003B67B5 /* Preview Content */,
@@ -156,8 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				96B41E052C2C15A6003B67B5 /* Challenge_state_binding.swift in Sources */,
+				963D91DF2C2C25D100299CFA /* Challenge_stack_foreach.swift in Sources */,
 				96B41DF22C2C0DC9003B67B5 /* ContentView.swift in Sources */,
-				96B41E072C2C1B7F003B67B5 /* Challenge_Stacks_ForEach.swift in Sources */,
 				96B41E012C2C1147003B67B5 /* Challenge 2.swift in Sources */,
 				96B41DF02C2C0DC9003B67B5 /* my_SwiftUIApp.swift in Sources */,
 				96B41DFF2C2C1141003B67B5 /* Challenge 1.swift in Sources */,
