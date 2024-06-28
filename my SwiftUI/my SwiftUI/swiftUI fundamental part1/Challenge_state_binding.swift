@@ -1,10 +1,11 @@
 import SwiftUI
 
-enum Mood: String {
+enum Mood: String, CaseIterable {
     case happy = "😀"
     case sad = "☹️"
     case upsidedown = "🙃"
     case cat = "🐱"
+    case dog = "🐶"
 }
 
 struct Challenge_state_binding: View {
@@ -48,12 +49,10 @@ struct StatusControl: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
 
             ColorPicker("Favorite Color", selection: $favoriteColor)
-
             Picker("Mood", selection: $mood) {
-                Text(Mood.happy.rawValue).tag(Mood.happy)
-                Text(Mood.sad.rawValue).tag(Mood.sad)
-                Text(Mood.upsidedown.rawValue).tag(Mood.upsidedown)
-                Text(Mood.cat.rawValue).tag(Mood.cat)
+                ForEach(Mood.allCases, id: \.hashValue) { mood in
+                    Text(mood.rawValue).tag(mood)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
         }
