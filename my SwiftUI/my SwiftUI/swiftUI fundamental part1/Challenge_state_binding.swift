@@ -15,6 +15,7 @@ class MoodManager: ObservableObject {
     func addEmoji(emoji: String) {
         moods.append(Mood(emoji: emoji))
     }
+
 }
 
 struct Challenge_state_binding: View {
@@ -77,6 +78,7 @@ struct StatusControl: View {
             Picker("Mood", selection: $selectedMood.emoji) {
                 ForEach(moodManager.moods, id: \.emoji) { mood in
                     Text(mood.emoji).tag(mood.emoji)
+
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
