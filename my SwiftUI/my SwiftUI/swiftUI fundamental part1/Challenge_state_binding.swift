@@ -1,10 +1,20 @@
 import SwiftUI
 
-enum Mood: String {
-    case happy = "😀"
-    case sad = "☹️"
-    case upsidedown = "🙃"
-    case cat = "🐱"
+struct Mood {
+    var emoji: String
+}
+
+class MoodManager: ObservableObject {
+    @Published var moods: [Mood] = [
+        Mood(emoji: "😀"),
+        Mood(emoji: "☹️"),
+        Mood(emoji: "🙃"),
+        Mood(emoji: "🐱"),
+    ]
+
+    func addEmoji(emoji: String) {
+        moods.append(Mood(emoji: emoji))
+    }
 }
 
 struct Challenge_state_binding: View {
@@ -19,18 +29,32 @@ struct Challenge_state_binding: View {
     // MARK: TODO - These 3 properties will need an attribute added...
     @State private var name: String = ""
     @State private  var favoriteColor: Color = .green
-    @State private var mood: Mood = .happy
+    @State var selectedMood: Mood = MoodManager().moods[0]
+    @StateObject var moodManager = MoodManager()
+    @State private var newEmoji = ""
 
     var body: some View {
         VStack {
             // MARK: TODO - Pass the right kind of data into each initializer
             Text("Set your status:")
 
-            StatusControl(name: $name, favoriteColor: $favoriteColor, mood: $mood)
+            StatusControl(name: $name,
+                          favoriteColor: $favoriteColor,
+                          selectedMood: $selectedMood,
+                          moodManager: moodManager)
                 .padding()
 
-            StatusIcon(name: $name, favoriteColor: $favoriteColor, mood: $mood)
-                .padding()
+            StatusIcon(name: $name, favoriteColor: $favoriteColor, mood: $selectedMood)
+
+
+            Spacer()
+            Text("Add new mood:")
+            TextField("Enter new emoji", text: $newEmoji)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+            Button("Add Mood") {
+                moodManager.addEmoji(emoji: newEmoji)
+            }
         }
     }
 }
@@ -39,7 +63,8 @@ struct StatusControl: View {
     // MARK: TODO - These 3 properties will need an attribute added...
     @Binding var name: String
     @Binding var favoriteColor: Color
-    @Binding var mood: Mood
+    @Binding var selectedMood: Mood
+    @ObservedObject var moodManager: MoodManager
 
     var body: some View {
         // MARK: TODO - Pass the right data into the views below
@@ -49,11 +74,10 @@ struct StatusControl: View {
 
             ColorPicker("Favorite Color", selection: $favoriteColor)
 
-            Picker("Mood", selection: $mood) {
-                Text(Mood.happy.rawValue).tag(Mood.happy)
-                Text(Mood.sad.rawValue).tag(Mood.sad)
-                Text(Mood.upsidedown.rawValue).tag(Mood.upsidedown)
-                Text(Mood.cat.rawValue).tag(Mood.cat)
+            Picker("Mood", selection: $selectedMood.emoji) {
+                ForEach(moodManager.moods, id: \.emoji) { mood in
+                    Text(mood.emoji).tag(mood.emoji)
+                }
             }
             .pickerStyle(SegmentedPickerStyle())
         }
@@ -67,9 +91,10 @@ struct StatusIcon: View {
 
     var body: some View {
         VStack {
-            Text(mood.rawValue)
+            Text(mood.emoji)
             Text(name)
                 .foregroundColor(.white)
+
         }
         .font(.largeTitle)
         .padding()
