@@ -86,7 +86,7 @@ struct MessagePopover: View {
 struct ChallengeView_Previews: PreviewProvider {
     static var previews: some View {
         let mix = MeowMix()
-        
+        ChallengeView()
         ContentView()
         DetailView2(track: mix.tracks[0])
     }
