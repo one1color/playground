@@ -23,7 +23,9 @@ let dwarvesAfterM2 = arrayOfDwarfArrays.flatMap { dwarves -> [String] in
   dwarves.filter { $0 > "M" }
 }
 
-
+//: Thomas challenge
+let dwarvesAfterM3 = arrayOfDwarfArrays.flatMap { $0.filter { $0 > "M"} }
+dwarvesAfterM3
 
 //: reduce
 
@@ -121,10 +123,10 @@ let under18 = namesAndAges.filter {
  Using the same `namesAndAges` dictionary, filter out the adults (those 18 or older) and then use `map` to convert to an array containing just the names (i.e. drop the ages).
 */
 
-
-
-let adult = namesAndAges.filter {
-    $0.value > 18
+let adults = namesAndAges.filter {
+    $0.value >= 18
 }.map {
     $0.key
 }
+
+adults
