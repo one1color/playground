@@ -24,10 +24,13 @@ let dwarvesAfterM2 = arrayOfDwarfArrays.flatMap { dwarves -> [String] in
 }
 
 //: Thomas challenge
-let dwarvesAfterM3 = arrayOfDwarfArrays.flatMap { $0.filter { $0 > "M"} }
+let dwarvesAfterM3 = arrayOfDwarfArrays
+    .flatMap { $0 }
+    .filter { $0 > "M" }
 dwarvesAfterM3
 
 //: reduce
+
 
 
 let ozmaGrades = [60, 96, 87, 42]
